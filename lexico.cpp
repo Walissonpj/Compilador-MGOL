@@ -149,7 +149,7 @@ class Lexico{
 			finalStates[4] = "Num";
 			finalStates[7] = "Num";
 			finalStates[9] = "Literal";
-			finalStates[10] = "Id";
+			finalStates[10] = "id";
 			finalStates[11] = "EOF";
 			finalStates[13] = "Comentario";
 			finalStates[14] = "OPR";
@@ -207,9 +207,11 @@ class Lexico{
 			}
 			if( finalStates.count(u)){
 				no newtoken(lexema, finalStates[u]);
-				if( newtoken.token == "Id"){
-					if( !tableOfSymbol.count(lexema))
+				if( newtoken.token == "id"){
+					if( !tableOfSymbol.count(lexema)){
+						cout << newtoken.lexema << ' ' << newtoken.token << ' ' << newtoken.tipo << endl;
 						tableOfSymbol[lexema] = newtoken;
+					}
 				}
 				return newtoken;
 			}else{
