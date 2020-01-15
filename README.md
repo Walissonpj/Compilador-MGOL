@@ -1,2 +1,2 @@
 # Compilador-MGOL
-Trabalho da disciplina de compuladores
+Trabalho da disciplina de compiladores.
